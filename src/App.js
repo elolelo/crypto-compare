@@ -10,15 +10,6 @@ class  App extends Component {
 
   }
 
-  componentWillMount() {
-    axios.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR&extraParams=your_app_name')
-      .then(res => {
-        const cryptos =res.data;
-        console.log(cryptos);
-        this.setState({crptos : cryptos})
-      })
-  }
-
   componentDidMount() {
       axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,EUR&api_key=')
         .then(res => {
@@ -27,20 +18,16 @@ class  App extends Component {
             this.setState({cryptos: cryptos});
         });
   }
-
-  
-  
-
   render(){
   return (
     <div className="container">
-       <h4>Cryptocompare 2019</h4>
+       <h4> Daily Cryptocompare in USD</h4>
 
        <div className="App">
       {Object.keys(this.state.cryptos).map((key) => 
           <div id="#crypto-holder">
               <span className="left">{key}</span>
-              <span className="right"><NumberFormat value={this.state.cryptos[key].USD} displayType={'text'} displayPrecision={2} /></span>
+              <span className="right"><NumberFormat value={this.state.cryptos[key].USD} displaytype={'text'} displayprecision={2} thousandSeparator={true} prefix={'$'}/></span>
           </div>
         )}
     </div> 

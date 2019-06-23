@@ -1,17 +1,13 @@
 body{
-  background: #FFFFFF;
-  padding: 90px
+  background: rgb(202, 189, 189);
+  padding: 10px
 }
 
 div#crypto-holder{
-  background: grey;
+  background: rgb(100, 97, 97);
   width: 70%;
-  margin:20 auto 4px auto;
-  box-shadow: 1px 1px 0 lightgrey;
-}
-
-div.container{
-  background: grey;
+  margin:90 auto 4px auto;
+  box-shadow: 10px 1px 0 lightgrey;
 }
 
 span.left{
