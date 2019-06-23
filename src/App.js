@@ -40,7 +40,7 @@ class  App extends Component {
       {Object.keys(this.state.cryptos).map((key) => 
           <div id="#crypto-holder">
               <span className="left">{key}</span>
-              <span className="right"><NumberFormat={this.state.cryptos[key].USD} displayType={'text'} displayPrecision={2} /></span>
+              <span className="right"><NumberFormat value={this.state.cryptos[key].USD} displayType={'text'} displayPrecision={2} /></span>
           </div>
         )}
     </div> 
