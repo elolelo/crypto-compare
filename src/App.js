@@ -21,13 +21,19 @@ class  App extends Component {
   render(){
   return (
     <div className="container">
-       <h4> Daily Cryptocompare in USD</h4>
+       <h2> Daily Cryptocompare in USD</h2>
 
        <div className="App">
       {Object.keys(this.state.cryptos).map((key) => 
           <div id="#crypto-holder">
               <span className="left">{key}</span>
-              <span className="right"><NumberFormat value={this.state.cryptos[key].USD} displaytype={'text'} displayprecision={2} thousandSeparator={true} prefix={'$'}/></span>
+              <span className="right">
+                <NumberFormat 
+                 value={this.state.cryptos[key].USD}
+                displaytype={'text'} displayprecision={2} 
+                thousandSeparator={true} 
+                prefix={' $ '} />
+              </span>
           </div>
         )}
     </div> 
